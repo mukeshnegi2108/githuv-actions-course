@@ -10,6 +10,7 @@ jobs:
         run: echo "Hello, world!"
   say-goodbye:
     runs-on: ubuntu-latest
+    needs: echo-hello
     steps:
       - name: I will Succeed
         run: |
