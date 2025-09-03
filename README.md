@@ -13,5 +13,3 @@ This repository is a personal project created to follow and practice concepts fr
 I am using this workspace to gain hands-on experience with GitHub Actions, improve my automation skills, and document my learning journey.
 
 Feel free to explore the workflows and use them as references for your own projects!
-
---for testing
