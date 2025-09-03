@@ -1,0 +1,37 @@
+name: 06 - Contexts
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  echo-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Information
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event Name: ${{ github.event_name }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Ref: ${{ github.ref }}"
+      - name: Show Runner Context
+        run: |
+          echo "Runner OS: $RUNNER_OS"
+          echo "Runner Temp Directory: $RUNNER_TEMP"
+          echo "Runner Workspace: $RUNNER_WORKSPACE"
+      - name: Show Job Context
+        run: |
+          echo "Job Status: ${{ job.status }}"
+          echo "Job ID: ${{ job.job_id }}"
+      - name: Show Workflow Context
+        run: |
+          echo "Workflow Name: ${{ workflow.name }}"
+          echo "Workflow Run ID: ${{ workflow.run_id }}"
+          echo "Workflow Run Number: ${{ workflow.run_number }}"
+      - name: Show Steps Context
+        id: step1
+        run: echo "This is step 1"
+      - name: Show Steps Context Example
+        run: |
+          echo "Step 1 Conclusion: ${{ steps.step1.conclusion }}"
+          echo "Step 1 Output (if any): ${{ steps.step1.outputs }}"
